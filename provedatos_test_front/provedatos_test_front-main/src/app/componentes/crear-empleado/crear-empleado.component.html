@@ -1,0 +1,14 @@
+<form>
+    <div class="container text-center">
+        <h2>Crear Empleado Nuevo</h2>
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" class="mat-tab-group mb-0">
+            <mat-tab label="Datos Personales" class="mb-4">
+                <app-empleado-datos-personales (empleadoDatosPersonales)="agregarDatosPersonales($event)"></app-empleado-datos-personales>
+            </mat-tab>
+            <mat-tab label="Datos Laborales" class="mb-4">
+                <app-empleado-datos-laborales (empleadoDatosLaborales)="agregarDatosLaborales($event)"></app-empleado-datos-laborales>
+            </mat-tab>
+        </mat-tab-group>
+        <button type="button" class="btn btn-info mb-4" (click)="guardarEmpleado()">Guardar Empleado</button>
+    </div>
+</form>

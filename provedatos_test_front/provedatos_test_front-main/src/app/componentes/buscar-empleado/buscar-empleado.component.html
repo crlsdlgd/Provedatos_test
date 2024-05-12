@@ -1,0 +1,45 @@
+<form class="container"  [formGroup]="searchForm">
+    <div class="from-group">
+        <div>
+            <h2 class="text-center mb-4">Módulo de Empleados</h2>
+        </div>
+        <div class="row justify-content-around align-items-center mb-4">
+            <div class="col-sm-4  text-center">
+                <header>Nombre</header>
+                <input type="text" class="form-control" id="nombre" name="nombre" formControlName="nombreEmpleado" >
+            </div>
+            <div class="col-sm-4 text-center">
+                <header>Código Empleado</header>
+                <input type="text" class="form-control" id="codigo" name="codigo" formControlName="codigoEmpleado" >
+            </div>
+            <div class="col-sm-4 text-center">
+                <button type="button" class="btn btn-info " fontIcon="search" (click)="buscarEmpleado()"  [disabled]="searchForm.get('nombreEmpleado')?.value.trim() === '' && searchForm.get('codigoEmpleado')?.value.trim() === ''">Buscar
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                        fill="#FFFFFF">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Código</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let empleado of empleados">
+                        <td>{{empleado.nombres+" "+empleado.apellidos}}</td>
+                        <td>{{empleado.codigo}}</td>
+                        <td>{{empleado.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>

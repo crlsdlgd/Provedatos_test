@@ -1,0 +1,53 @@
+<div>
+    <div class=" text-center">
+        <h2>Reporte de Empleados</h2>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombres</th>
+                    <th>Ruc Cedula</th>
+                    <th>Código</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>División</th>
+                    <th>Departamento</th>
+                    <th>Sección</th>
+                    <th>Cargo</th>
+                    <th>Fecha de Ingreso</th>
+                    <th>Estado</th>
+                    <th>Sueldo USD</th>
+                    <th>Discapacidad</th>
+                    <th>Email</th>
+                    <th>Categoría</th>
+                    <th>Estado Civil</th>
+                    <th>Tipo de Sangre</th>
+                    <th>Provincia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleado of empleados">
+                    <td>{{empleado.nombres+" "+empleado.apellidos}}</td>
+                    <td>{{empleado.rucCedula}}</td>
+                    <td>{{empleado.codigo}}</td>
+                    <td>{{empleado.direccion}}</td>
+                    <td>{{empleado.telefono}}</td>
+                    <td>{{empleado.division}}</td>
+                    <td>{{empleado.departamento}}</td>
+                    <td>{{empleado.seccion}}</td>
+                    <td>{{empleado.cargo}}</td>
+                    <td>{{empleado.fechaIngreso}}</td>
+                    <td>{{empleado.status}}</td>
+                    <td>{{empleado.sueldo}}</td>
+                    <td>{{empleado.discapacidad}}</td>
+                    <td>{{empleado.email}}</td>
+                    <td>{{empleado.categoria}}</td>
+                    <td>{{empleado.estadoCivil}}</td>
+                    <td>{{empleado.tipoSangre}}</td>
+                    <td>{{empleado.provincia.nombreProvincia}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

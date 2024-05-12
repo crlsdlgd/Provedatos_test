@@ -1,0 +1,52 @@
+<div class="container mt-4 justify-content-around align-items-center form-group" (change)="agregarDatosLaborales()">
+    <div class="row  mb-4">
+        <div class=" col-sm-6">
+            <header class="mx-4">Fecha de Ingreso</header>
+            <input type="date" style="width: 100%;" name="fechaIngreso" id="fechaIngreso" class="form-control" [(ngModel)]="datosLaborales.fechaIngreso">
+        </div>
+        <div class=" col-sm-6">
+            <header class="mx-4">Cargo</header>
+            <input type="text" style="width: 100%;" name="cargo" id="cargo" class="form-control" [(ngModel)]="datosLaborales.cargo">
+        </div>
+    </div>
+    <div class="row  mb-4">
+        <div class=" col-sm-6">
+            <header class="mx-4">Departamento</header>
+            <input type="text" style="width: 100%;" name="departamento" id="departamento" class="form-control" [(ngModel)]="datosLaborales.departamento">
+        </div>
+        <div class=" col-sm-6">
+            <header class="mx-4">Provincia Laboral</header>
+            <select style="width: 100%;" class="form-control" name="provincia" id="provincia" [(ngModel)]="provinciaLaboralSelected">
+                <option *ngFor="let provincia of provincias" [ngValue]="provincia" >{{provincia.nombreProvincia}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row  mb-4">
+        <div class=" col-sm-6">
+            <header class="">Sueldo</header>
+            <div class="row mx-0">
+                <input type="text" style="width: 100%;" name="sueldo" id="sueldo" class="form-control col-sm-10" [(ngModel)]="datosLaborales.sueldo">
+                <h6 class="col-sm-2">USD</h6>
+            </div>
+
+        </div>
+        <div class=" col-sm-6">
+            <header>Jornada Parcial</header>
+            <div class="container form-check-inline justify-content-around col-sm-3">
+                <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="true" checked>Si
+                </label>
+                <label class="form-check-label" for="radio2">
+                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="false" checked>No
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row  mb-4">
+        <div class=" col-sm-12">
+            <header class="mx-4">Observaciones Laborales</header>
+            <textarea type="text" style="width: 100%; min-height: 4em;" name="observacionesLaborales" id="observacionesLaborales" class="form-control" [(ngModel)]="datosLaborales.observacionesLaborales"></textarea>
+        </div>
+    </div>
+    <!-- <button type="button" class="btn btn-secondary" (click)="agregarDatosLaborales()">Cargar Datos Laborales</button> -->
+</div>
